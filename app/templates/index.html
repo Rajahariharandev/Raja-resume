@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ p.name }} – Python Developer Portfolio</title>
+  <meta name="description"
+    content="Portfolio of {{ p.name }} – {{ p.title }} specializing in backend automation, REST APIs, microservices, and team leadership." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+
+<body>
+
+  <!-- ═══ NAVBAR ═══ -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">RK<span class="dot">.</span></a>
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#contact" class="nav-link contact-btn">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══ MOBILE MENU ═══ -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#about" class="mob-link">About</a>
+    <a href="#skills" class="mob-link">Skills</a>
+    <a href="#experience" class="mob-link">Experience</a>
+    <a href="#projects" class="mob-link">Projects</a>
+    <a href="#education" class="mob-link">Education</a>
+    <a href="#contact" class="mob-link">Contact</a>
+  </div>
+
+  <!-- ═══ HERO ═══ -->
+  <section id="hero">
+    <div class="hero-bg">
+      <div class="grid-lines"></div>
+      <div class="glow glow-1"></div>
+      <div class="glow glow-2"></div>
+      <div class="glow glow-3"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span>Available for new opportunities</span>
+      </div>
+
+      <div class="avatar-wrap">
+        <div class="avatar">
+          <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="ag" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#6366f1" />
+                <stop offset="100%" stop-color="#06b6d4" />
+              </linearGradient>
+            </defs>
+            <circle cx="60" cy="60" r="58" fill="url(#ag)" opacity="0.12" stroke="url(#ag)" stroke-width="2" />
+            <circle cx="60" cy="45" r="22" fill="url(#ag)" opacity="0.85" />
+            <path d="M18 108 Q18 78 60 78 Q102 78 102 108Z" fill="url(#ag)" opacity="0.85" />
+            <text x="60" y="50" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="22"
+              font-family="Inter,sans-serif" font-weight="700">RK</text>
+          </svg>
+        </div>
+        <div class="avatar-ring"></div>
+        <div class="avatar-ring ring-2"></div>
+      </div>
+
+      <p class="hero-greeting">Hello, I'm</p>
+      <h1 class="hero-name">{{ p.name.split()[0] }} <span class="gradient-text">{{ p.name.split()[-1] }}</span></h1>
+      <div class="hero-role">
+        <span class="role-typed" id="typed-text"></span><span class="cursor">|</span>
+      </div>
+      <p class="hero-location">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+        </svg>
+        {{ p.location }}
+      </p>
+      <p class="hero-summary">{{ p.summary[:220] }}…</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+          </svg>
+          Get In Touch
+        </a>
+        <a href="#projects" class="btn btn-secondary">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+          </svg>
+          View Projects
+        </a>
+      </div>
+      <div class="hero-socials">
+        <a href="mailto:{{ p.email }}" class="social-link" title="Email">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+          </svg>
+        </a>
+        <a href="tel:{{ p.phone }}" class="social-link" title="Phone">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+          </svg>
+        </a>
+        <a href="{{ p.portfolio_url }}" target="_blank" class="social-link" title="Web Portfolio">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+    <a href="#about" class="scroll-down">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M7 10l5 5 5-5z" />
+      </svg>
+    </a>
+  </section>
+
+  <!-- ═══ ABOUT ═══ -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">About Me</span>
+        <h2 class="section-title">Who I Am</h2>
+        <p class="section-sub">A passionate backend developer turned technical leader</p>
+      </div>
+      <div class="about-grid">
+        {% set cards = [
+        ("check","Leadership","Promoted to Assistant Lead within 12 months — overseeing end-to-end Python automation
+        delivery across multiple sprint teams."),
+        ("code","Backend Dev","Expert in Python (Django, FastAPI), Node.js, Golang — building scalable microservices and
+        REST APIs from the ground up."),
+        ("bolt","Automation","Designed reusable automation frameworks that eliminated ~6 hrs/week of manual processing
+        and improved throughput by 30%."),
+        ("team","Mentoring","Conducting structured code reviews and 1:1 mentoring sessions — improving team code quality
+        and onboarding speed."),
+        ] %}
+        {% for icon, title, desc in cards %}
+        <div class="about-card glass">
+          <div class="about-card-icon">
+            {% if icon == "check" %}
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" />
+            </svg>
+            {% elif icon == "code" %}
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" stroke-linecap="round" />
+            </svg>
+            {% elif icon == "bolt" %}
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" />
+            </svg>
+            {% else %}
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            {% endif %}
+          </div>
+          <h3>{{ title }}</h3>
+          <p>{{ desc }}</p>
+        </div>
+        {% endfor %}
+      </div>
+
+      <div class="stats-bar glass">
+        {% for s in p.stats %}
+        <div class="stat">
+          <span class="stat-number"
+            data-target="{{ s.value | replace('%','') | replace('+','') | replace('x','') }}">0</span>
+          <span class="stat-plus">{{ s.value[-1] if s.value[-1] in ['+','%','x'] else '' }}</span>
+          <span class="stat-label">{{ s.label }}</span>
+        </div>
+        {% if not loop.last %}<div class="stat-divider"></div>{% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SKILLS ═══ -->
+  <section id="skills" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Technical Skills</span>
+        <h2 class="section-title">Core Competencies</h2>
+        <p class="section-sub">A full-stack view of my technical expertise</p>
+      </div>
+
+      <div class="skills-grid">
+        {% for sk in p.skills %}
+        <div class="skill-group glass" id="skill-{{ sk.id }}">
+          <div class="skill-group-header">
+            <div class="skill-group-icon" style="--color:{{ sk.color }}">
+              {% if sk.icon == "python" %}
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M19.14 7.5A2.86 2.86 0 0 1 22 10.36v3.78a2.86 2.86 0 0 1-2.86 2.86H12a1 1 0 0 0-1 1v.75H8.5v-.75A3.75 3.75 0 0 1 12.25 14H17a.75.75 0 0 0 .75-.75v-3.78a.75.75 0 0 0-.75-.75h-3.25v-1.5H19.14zM4.86 7.5H11.5V9H7a.75.75 0 0 0-.75.75v3.78c0 .41.34.75.75.75h3.25V15.8H4.86A2.86 2.86 0 0 1 2 12.94v-2.58A2.86 2.86 0 0 1 4.86 7.5zM9.5 16.5a.75.75 0 1 1 0 1.5.75.75 0 0 1 0-1.5zm5 0a.75.75 0 1 1 0 1.5.75.75 0 0 1 0-1.5z" />
+              </svg>
+              {% elif sk.icon == "automation" %}
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                  stroke-linecap="round" />
+              </svg>
+              {% elif sk.icon == "backend" %}
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" />
+                <path d="M8 21h8M12 17v4" />
+              </svg>
+              {% elif sk.icon == "database" %}
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <ellipse cx="12" cy="5" rx="9" ry="3" />
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+              </svg>
+              {% elif sk.icon == "devops" %}
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+              </svg>
+              {% else %}
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              {% endif %}
+            </div>
+            <h3>{{ sk.title }}</h3>
+          </div>
+          <div class="skill-tags">
+            {% for tag in sk.tags %}
+            <span class="skill-tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <div class="proficiency-section">
+        <h3 class="proficiency-title">Key Proficiency Levels</h3>
+        <div class="prof-bars">
+          {% for pr in p.proficiency %}
+          <div class="prof-bar-wrap">
+            <div class="prof-bar-label">
+              <span>{{ pr.label }}</span><span>{{ pr.pct }}%</span>
+            </div>
+            <div class="prof-bar-track">
+              <div class="prof-bar-fill" data-width="{{ pr.pct }}" style="--clr:{{ pr.color }}"></div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ EXPERIENCE ═══ -->
+  <section id="experience" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Work History</span>
+        <h2 class="section-title">Professional Experience</h2>
+        <p class="section-sub">3+ years of progressive growth in software development</p>
+      </div>
+      <div class="timeline">
+        {% for exp in p.experience %}
+        <div class="timeline-item" id="{{ exp.id }}">
+          <div class="timeline-dot {% if loop.first %}promoted{% endif %}">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <circle cx="12" cy="12" r="6" />
+            </svg>
+          </div>
+          <div class="timeline-content glass">
+            <div class="timeline-meta">
+              <span class="timeline-badge {{ exp.badge_class }}">{{ exp.badge }}</span>
+              <span class="timeline-date">{{ exp.period }}</span>
+            </div>
+            <h3 class="timeline-role">{{ exp.role }}</h3>
+            <p class="timeline-company">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 7V3H2v18h20V7H12zm-2 12H4v-2h6v2zm0-4H4v-2h6v2zm0-4H4V9h6v2zm0-4H4V5h6v2zm10 12h-8V9h8v10zm-2-8h-4v2h4v-2zm0 4h-4v2h4v-2z" />
+              </svg>
+              {{ exp.company }}
+            </p>
+            <ul class="timeline-list">
+              {% for h in exp.highlights %}
+              <li><strong>{{ h.title }}:</strong> {{ h.detail }}</li>
+              {% endfor %}
+            </ul>
+            <div class="timeline-tags">
+              {% for tag in exp.tags %}
+              <span>{{ tag }}</span>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PROJECTS ═══ -->
+  <section id="projects" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">My Work</span>
+        <h2 class="section-title">Technical Projects</h2>
+        <p class="section-sub">Real-world solutions with measurable impact</p>
+      </div>
+      <div class="projects-grid">
+        {% for proj in p.projects %}
+        <div class="project-card glass" id="{{ proj.id }}">
+          <div class="project-glow" style="--gclr:{{ proj.color }}"></div>
+          <div class="project-header">
+            <div class="project-icon" style="--pclr:{{ proj.color }}">
+              {% if proj.icon == "lightning" %}
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              {% else %}
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path
+                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              {% endif %}
+            </div>
+            <div class="project-badges">
+              {% for tag in proj.tags %}
+              <span class="p-badge">{{ tag }}</span>
+              {% endfor %}
+            </div>
+          </div>
+          <h3 class="project-title">{{ proj.title }}</h3>
+          <p class="project-desc">{{ proj.description }}</p>
+          <div class="project-metrics">
+            {% for m in proj.metrics %}
+            <div class="metric">
+              <span class="metric-value">{{ m.value }}</span>
+              <span class="metric-label">{{ m.label }}</span>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ EDUCATION ═══ -->
+  <section id="education" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Academic & Certifications</span>
+        <h2 class="section-title">Education</h2>
+        <p class="section-sub">Building a strong foundation for lifelong learning</p>
+      </div>
+      <div class="edu-grid">
+        {% for edu in p.education %}
+        <div class="edu-card glass" id="{{ edu.id }}">
+          <div class="edu-icon {% if edu.type == 'cert' %}cert-icon{% endif %}">
+            {% if edu.type == "degree" %}
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 14l9-5-9-5-9 5 9 5z" />
+              <path
+                d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+            </svg>
+            {% else %}
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+            </svg>
+            {% endif %}
+          </div>
+          <div class="edu-content">
+            <div class="edu-year">{{ edu.period }}</div>
+            <h3>{{ edu.degree }}</h3>
+            <p class="edu-institution">{{ edu.institution }}</p>
+            {% if edu.score %}
+            <div class="edu-score">
+              <span class="score-label">Aggregate</span>
+              <div class="score-bar-track">
+                <div class="score-bar-fill" style="width:{{ edu.score_pct }}%"></div>
+              </div>
+              <span class="score-value">{{ edu.score }}</span>
+            </div>
+            {% else %}
+            <div class="cert-badge-wrap">
+              <span class="cert-badge">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
+                  <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+                Certified Professional
+              </span>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <div class="learning-card glass">
+        <div class="learning-header">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="learning-icon">
+            <path
+              d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+          </svg>
+          <h3>Currently Self-Learning</h3>
+        </div>
+        <div class="learning-items">
+          {% for item in p.learning %}
+          <div class="learning-item">
+            <div class="learning-dot" style="--lclr:{{ item.color }}"></div>
+            <div>
+              <strong>{{ item.title }}</strong>
+              <span>{{ item.detail }}</span>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACT ═══ -->
+  <section id="contact" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Let's Connect</span>
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-sub">Open to new opportunities and collaborations</p>
+      </div>
+      <div class="contact-grid">
+
+        <div class="contact-info glass">
+          <h3>Contact Details</h3>
+          <div class="contact-items">
+            <a href="mailto:{{ p.email }}" class="contact-item">
+              <div class="contact-item-icon" style="--cclr:#6366f1">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                </svg>
+              </div>
+              <div>
+                <span class="contact-item-label">Email</span>
+                <span class="contact-item-value">{{ p.email }}</span>
+              </div>
+            </a>
+            <a href="tel:{{ p.phone }}" class="contact-item">
+              <div class="contact-item-icon" style="--cclr:#06b6d4">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                </svg>
+              </div>
+              <div>
+                <span class="contact-item-label">Phone</span>
+                <span class="contact-item-value">{{ p.phone }}</span>
+              </div>
+            </a>
+            <a href="{{ p.portfolio_url }}" target="_blank" class="contact-item">
+              <div class="contact-item-icon" style="--cclr:#10b981">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                </svg>
+              </div>
+              <div>
+                <span class="contact-item-label">Portfolio</span>
+                <span class="contact-item-value">{{ p.portfolio_url | replace("https://","") }}</span>
+              </div>
+            </a>
+            <div class="contact-item">
+              <div class="contact-item-icon" style="--cclr:#f59e0b">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                </svg>
+              </div>
+              <div>
+                <span class="contact-item-label">Location</span>
+                <span class="contact-item-value">{{ p.location }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap glass">
+          <h3>Send a Message</h3>
+          <form class="contact-form" id="contact-form">
+            <div class="form-group">
+              <label for="fname">Full Name</label>
+              <input type="text" id="fname" placeholder="Your full name" required />
+            </div>
+            <div class="form-group">
+              <label for="femail">Email Address</label>
+              <input type="email" id="femail" placeholder="your@email.com" required />
+            </div>
+            <div class="form-group">
+              <label for="fsubject">Subject</label>
+              <input type="text" id="fsubject" placeholder="What's this about?" />
+            </div>
+            <div class="form-group">
+              <label for="fmessage">Message</label>
+              <textarea id="fmessage" rows="5" placeholder="Tell me about the opportunity…" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+              </svg>
+              Send Message
+            </button>
+            <div id="form-msg" class="form-feedback" style="display:none"></div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="footer-name">{{ p.name }}</p>
+      <p class="footer-copy">© {{ p.year }} · Built with <span style="color:#6366f1">Python Flask</span> &amp; passion
+        for clean code</p>
+      <div class="footer-links">
+        <a href="mailto:{{ p.email }}">Email</a>
+        <a href="tel:{{ p.phone }}">Phone</a>
+        <a href="{{ p.portfolio_url }}" target="_blank">Portfolio</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>

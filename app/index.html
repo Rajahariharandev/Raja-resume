@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rajahariharan K – Python Developer Portfolio</title>
+  <meta name="description"
+    content="Portfolio of Rajahariharan K – Assistant Lead Python Developer specializing in backend automation, REST APIs, microservices, and team leadership." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ═══ NAVBAR ═══ -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">RK<span class="dot">.</span></a>
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#contact" class="nav-link contact-btn">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══ HERO ═══ -->
+  <section id="hero">
+    <div class="hero-bg">
+      <div class="grid-lines"></div>
+      <div class="glow glow-1"></div>
+      <div class="glow glow-2"></div>
+      <div class="glow glow-3"></div>
+      <!-- Floating particles -->
+      <div class="particles" id="particles"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span>Available for new opportunities</span>
+      </div>
+
+      <div class="avatar-wrap">
+        <div class="avatar">
+          <!-- <svg viewBox="0 0 120 120" fill="none" xmlns="templates\converted_image.svg"> -->
+          <img src="templates/converted_image.svg" alt="SVG Image">
+          <defs>
+            <linearGradient id="avatarGrad" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#6366f1" />
+              <stop offset="100%" stop-color="#06b6d4" />
+            </linearGradient>
+          </defs>
+          <circle cx="60" cy="60" r="58" fill="url(#avatarGrad)" opacity="0.15" stroke="url(#avatarGrad)"
+            stroke-width="2" />
+          <circle cx="60" cy="46" r="20" fill="url(#avatarGrad)" opacity="0.8" />
+          <path d="M20 105 Q20 78 60 78 Q100 78 100 105" fill="url(#avatarGrad)" opacity="0.8" />
+          </svg>
+        </div>
+        <div class="avatar-ring"></div>
+        <div class="avatar-ring ring-2"></div>
+      </div>
+
+      <div class="hero-text">
+        <p class="hero-greeting">Hello, I'm</p>
+        <h1 class="hero-name">Rajahariharan <span class="gradient-text">K</span></h1>
+        <div class="hero-role">
+          <span class="role-static">Assistant Lead –&nbsp;</span>
+          <span class="role-typed" id="typed-text"></span>
+          <span class="cursor">|</span>
+        </div>
+        <p class="hero-location">
+          <svg class="icon" viewBox="0 0 24 24">
+            <path
+              d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+          </svg>
+          Trichy, Tamil Nadu, India
+        </p>
+        <p class="hero-summary">
+          Promoted Python Developer &amp; Assistant Lead with <strong>3+ years</strong> of experience building
+          automation scripts, backend microservices, and REST API integrations. Recognized for technical leadership
+          within the same organization.
+        </p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-primary" id="hero-contact-btn">
+            <svg class="btn-icon" viewBox="0 0 24 24">
+              <path
+                d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+            </svg>
+            Get In Touch
+          </a>
+          <a href="#projects" class="btn btn-secondary" id="hero-projects-btn">
+            <svg class="btn-icon" viewBox="0 0 24 24">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+            View Projects
+          </a>
+        </div>
+        <div class="hero-socials">
+          <a href="mailto:rajahariharan2244@gmail.com" class="social-link" title="Email" id="hero-email-link">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+            </svg>
+          </a>
+          <a href="tel:+916383852354" class="social-link" title="Phone" id="hero-phone-link">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+            </svg>
+          </a>
+          <a href="https://rajahariharan-portfolio.netlify.app" target="_blank" class="social-link" title="Portfolio"
+            id="hero-portfolio-link">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-down" id="scroll-down-btn">
+      <svg viewBox="0 0 24 24">
+        <path d="M7 10l5 5 5-5z" />
+      </svg>
+    </a>
+  </section>
+
+  <!-- ═══ ABOUT ═══ -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">About Me</span>
+        <h2 class="section-title">Who I Am</h2>
+        <p class="section-sub">A passionate backend developer turned technical leader</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-card glass">
+          <div class="about-card-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" fill="none"
+                stroke-linecap="round" />
+            </svg>
+          </div>
+          <h3>Leadership</h3>
+          <p>Promoted to Assistant Lead within 12 months — overseeing end-to-end Python automation delivery across
+            multiple sprint teams.</p>
+        </div>
+        <div class="about-card glass">
+          <div class="about-card-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" stroke="currentColor" stroke-width="2" fill="none"
+                stroke-linecap="round" />
+            </svg>
+          </div>
+          <h3>Backend Dev</h3>
+          <p>Expert in Python (Django, FastAPI), Node.js, Golang — building scalable microservices and REST APIs from
+            the ground up.</p>
+        </div>
+        <div class="about-card glass">
+          <div class="about-card-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentColor" stroke-width="2" fill="none"
+                stroke-linecap="round" />
+            </svg>
+          </div>
+          <h3>Automation</h3>
+          <p>Designed reusable automation frameworks that eliminated ~6 hrs/week of manual processing and improved
+            throughput by 30%.</p>
+        </div>
+        <div class="about-card glass">
+          <div class="about-card-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"
+                stroke="currentColor" stroke-width="2" fill="none" />
+            </svg>
+          </div>
+          <h3>Mentoring</h3>
+          <p>Conducting structured code reviews and 1:1 mentoring sessions — improving team code quality and onboarding
+            speed.</p>
+        </div>
+      </div>
+
+      <div class="stats-bar glass">
+        <div class="stat">
+          <span class="stat-number" data-target="3">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number" data-target="30">0</span><span class="stat-plus">%</span>
+          <span class="stat-label">Performance Boost</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number" data-target="70">0</span><span class="stat-plus">%</span>
+          <span class="stat-label">Manual Effort Reduced</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number" data-target="5">0</span><span class="stat-plus">x</span>
+          <span class="stat-label">Scalability Gain</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SKILLS ═══ -->
+  <section id="skills" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Technical Skills</span>
+        <h2 class="section-title">Core Competencies</h2>
+        <p class="section-sub">A full-stack view of my technical expertise</p>
+      </div>
+
+      <div class="skills-grid">
+
+        <div class="skill-group glass" id="skill-python">
+          <div class="skill-group-header">
+            <div class="skill-group-icon" style="--color: #6366f1">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M19.14 7.5A2.86 2.86 0 0 1 22 10.36v3.78a2.86 2.86 0 0 1-2.86 2.86H12a1 1 0 0 0-1 1v.75H8.5v-.75A3.75 3.75 0 0 1 12.25 14H17a.75.75 0 0 0 .75-.75v-3.78a.75.75 0 0 0-.75-.75h-3.25v-1.5H19.14zM4.86 7.5H11.5V9H7a.75.75 0 0 0-.75.75v3.78c0 .41.34.75.75.75h3.25V15.8H4.86A2.86 2.86 0 0 1 2 12.94v-2.58A2.86 2.86 0 0 1 4.86 7.5zM9.5 16.5a.75.75 0 1 1 0 1.5.75.75 0 0 1 0-1.5zm5 0a.75.75 0 1 1 0 1.5.75.75 0 0 1 0-1.5z" />
+              </svg>
+            </div>
+            <h3>Python & Scripting</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Python 3.x</span>
+            <span class="skill-tag">Django</span>
+            <span class="skill-tag">FastAPI</span>
+            <span class="skill-tag">Automation Scripts</span>
+            <span class="skill-tag">Shell/Bash</span>
+            <span class="skill-tag">PHP</span>
+          </div>
+        </div>
+
+        <div class="skill-group glass" id="skill-automation">
+          <div class="skill-group-header">
+            <div class="skill-group-icon" style="--color: #06b6d4">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              </svg>
+            </div>
+            <h3>Automation & Quality</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">REST API Automation</span>
+            <span class="skill-tag">Automation Frameworks</span>
+            <span class="skill-tag">Code Reviews</span>
+            <span class="skill-tag">Best Practices</span>
+            <span class="skill-tag">pytest (learning)</span>
+          </div>
+        </div>
+
+        <div class="skill-group glass" id="skill-backend">
+          <div class="skill-group-header">
+            <div class="skill-group-icon" style="--color: #8b5cf6">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" />
+                <path d="M8 21h8M12 17v4" />
+              </svg>
+            </div>
+            <h3>Backend & Architecture</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Node.js (Express)</span>
+            <span class="skill-tag">Golang</span>
+            <span class="skill-tag">Microservices</span>
+            <span class="skill-tag">RBAC</span>
+            <span class="skill-tag">JWT Auth</span>
+            <span class="skill-tag">SOAP-to-REST</span>
+          </div>
+        </div>
+
+        <div class="skill-group glass" id="skill-databases">
+          <div class="skill-group-header">
+            <div class="skill-group-icon" style="--color: #10b981">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <ellipse cx="12" cy="5" rx="9" ry="3" />
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+              </svg>
+            </div>
+            <h3>Databases</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">Oracle</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">SQL Optimization</span>
+            <span class="skill-tag">Schema Design</span>
+            <span class="skill-tag">Redis Caching</span>
+          </div>
+        </div>
+
+        <div class="skill-group glass" id="skill-devops">
+          <div class="skill-group-header">
+            <div class="skill-group-icon" style="--color: #f59e0b">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+              </svg>
+            </div>
+            <h3>DevOps & CI/CD</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">GitLab CI/CD</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Linux CLI</span>
+            <span class="skill-tag">Postman</span>
+            <span class="skill-tag">AWS (learning)</span>
+          </div>
+        </div>
+
+        <div class="skill-group glass" id="skill-leadership">
+          <div class="skill-group-header">
+            <div class="skill-group-icon" style="--color: #ec4899">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <h3>Leadership</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Team Leadership</span>
+            <span class="skill-tag">Technical Mentorship</span>
+            <span class="skill-tag">Sprint Planning</span>
+            <span class="skill-tag">Cross-functional Collab</span>
+            <span class="skill-tag">Agile/Scrum</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Proficiency bars -->
+      <div class="proficiency-section">
+        <h3 class="proficiency-title">Key Proficiency Levels</h3>
+        <div class="prof-bars">
+          <div class="prof-bar-wrap">
+            <div class="prof-bar-label"><span>Python / Django / FastAPI</span><span>95%</span></div>
+            <div class="prof-bar-track">
+              <div class="prof-bar-fill" data-width="95" style="--clr:#6366f1"></div>
+            </div>
+          </div>
+          <div class="prof-bar-wrap">
+            <div class="prof-bar-label"><span>REST API & Automation</span><span>90%</span></div>
+            <div class="prof-bar-track">
+              <div class="prof-bar-fill" data-width="90" style="--clr:#06b6d4"></div>
+            </div>
+          </div>
+          <div class="prof-bar-wrap">
+            <div class="prof-bar-label"><span>SQL & Database Design</span><span>85%</span></div>
+            <div class="prof-bar-track">
+              <div class="prof-bar-fill" data-width="85" style="--clr:#10b981"></div>
+            </div>
+          </div>
+          <div class="prof-bar-wrap">
+            <div class="prof-bar-label"><span>GitLab CI/CD & Docker</span><span>80%</span></div>
+            <div class="prof-bar-track">
+              <div class="prof-bar-fill" data-width="80" style="--clr:#f59e0b"></div>
+            </div>
+          </div>
+          <div class="prof-bar-wrap">
+            <div class="prof-bar-label"><span>Node.js / Golang</span><span>70%</span></div>
+            <div class="prof-bar-track">
+              <div class="prof-bar-fill" data-width="70" style="--clr:#8b5cf6"></div>
+            </div>
+          </div>
+          <div class="prof-bar-wrap">
+            <div class="prof-bar-label"><span>AWS (S3, SNS, SQS)</span><span>40%</span></div>
+            <div class="prof-bar-track">
+              <div class="prof-bar-fill" data-width="40" style="--clr:#ec4899"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ EXPERIENCE ═══ -->
+  <section id="experience" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Work History</span>
+        <h2 class="section-title">Professional Experience</h2>
+        <p class="section-sub">3+ years of progressive growth in software development</p>
+      </div>
+
+      <div class="timeline">
+
+        <!-- Role 1 -->
+        <div class="timeline-item" id="exp-1">
+          <div class="timeline-dot promoted">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M13 5.08V3h-2v2.08C7.61 5.57 5 8.47 5 12c0 3.87 3.13 7 7 7s7-3.13 7-7c0-3.53-2.61-6.43-6-6.92zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z" />
+            </svg>
+          </div>
+          <div class="timeline-content glass">
+            <div class="timeline-meta">
+              <span class="timeline-badge badge-promoted">▲ PROMOTED</span>
+              <span class="timeline-date">Feb 2026 – Present</span>
+            </div>
+            <h3 class="timeline-role">Assistant Lead</h3>
+            <p class="timeline-company">
+              <svg class="icon-sm" viewBox="0 0 24 24">
+                <path
+                  d="M12 7V3H2v18h20V7H12zm-2 12H4v-2h6v2zm0-4H4v-2h6v2zm0-4H4V9h6v2zm0-4H4V5h6v2zm10 12h-8V9h8v10zm-2-8h-4v2h4v-2zm0 4h-4v2h4v-2z" />
+              </svg>
+              The SCM Silk Private Limited
+            </p>
+            <ul class="timeline-list">
+              <li><strong>Technical Leadership:</strong> Appointed as Assistant Lead within 12 months, overseeing
+                end-to-end Python automation delivery across multiple sprint teams.</li>
+              <li><strong>Automation Strategy:</strong> Driving design and implementation of scalable Python automation
+                frameworks — establishing reusable script libraries adopted organization-wide.</li>
+              <li><strong>Mentoring & Reviews:</strong> Conducting structured code reviews and 1:1 mentoring sessions
+                for junior developers, improving team code quality and onboarding speed.</li>
+              <li><strong>Stakeholder Collaboration:</strong> Liaising with cross-functional stakeholders to gather
+                automation requirements and translate business needs into technical solutions.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span>Python</span><span>Agile</span><span>Team Lead</span><span>Code Reviews</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Role 2 -->
+        <div class="timeline-item" id="exp-2">
+          <div class="timeline-dot">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z" />
+            </svg>
+          </div>
+          <div class="timeline-content glass">
+            <div class="timeline-meta">
+              <span class="timeline-badge badge-regular">Developer</span>
+              <span class="timeline-date">2025 – Jan 2026</span>
+            </div>
+            <h3 class="timeline-role">Associate Software Developer</h3>
+            <p class="timeline-company">
+              <svg class="icon-sm" viewBox="0 0 24 24">
+                <path
+                  d="M12 7V3H2v18h20V7H12zm-2 12H4v-2h6v2zm0-4H4v-2h6v2zm0-4H4V9h6v2zm0-4H4V5h6v2zm10 12h-8V9h8v10zm-2-8h-4v2h4v-2zm0 4h-4v2h4v-2z" />
+              </svg>
+              The SCM Silk Private Limited
+            </p>
+            <ul class="timeline-list">
+              <li><strong>Python Automation:</strong> Developed and maintained Python automation scripts for ERP
+                data-sync workflows, eliminating ~6 hours/week of manual processing and improving backend throughput by
+                30%.</li>
+              <li><strong>API & Framework Design:</strong> Built internal REST automation frameworks
+                (FastAPI/Django/Golang) integrating legacy ERP systems with modern web frontends, achieving a 5x
+                improvement in system scalability.</li>
+              <li><strong>Performance Optimization:</strong> Reduced server response time by 30% through Redis caching
+                and Python-driven SQL query optimization, supporting high-concurrency, low-latency data processing.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span>FastAPI</span><span>Django</span><span>Golang</span><span>Redis</span><span>SQL</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Role 3 -->
+        <div class="timeline-item" id="exp-3">
+          <div class="timeline-dot">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M20 6h-2.18c.07-.44.18-.88.18-1.35C18 2.99 16.01 1 13.65 1 12.38 1 11.27 1.78 10.5 2.88L10 3.54l-.5-.66C8.73 1.78 7.62 1 6.35 1 3.99 1 2 2.99 2 4.65c0 .47.11.91.18 1.35H0v2h1v11c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8h1V6h-4zm-5.65-3c.91 0 1.65.74 1.65 1.65S15.26 6 14.35 6H11V5.81C11 4.81 11.95 3 14.35 3z" />
+            </svg>
+          </div>
+          <div class="timeline-content glass">
+            <div class="timeline-meta">
+              <span class="timeline-badge badge-junior">Junior</span>
+              <span class="timeline-date">2023 – 2025</span>
+            </div>
+            <h3 class="timeline-role">Junior Associate – Software Developer</h3>
+            <p class="timeline-company">
+              <svg class="icon-sm" viewBox="0 0 24 24">
+                <path
+                  d="M12 7V3H2v18h20V7H12zm-2 12H4v-2h6v2zm0-4H4v-2h6v2zm0-4H4V9h6v2zm0-4H4V5h6v2zm10 12h-8V9h8v10zm-2-8h-4v2h4v-2zm0 4h-4v2h4v-2z" />
+              </svg>
+              The Chennai Silks HO
+            </p>
+            <ul class="timeline-list">
+              <li><strong>Automation Scripting:</strong> Authored Python (Django) automation scripts for front-end data
+                pipelines, improving user engagement by 15% and reducing manual data handling across web modules.</li>
+              <li><strong>Database Automation:</strong> Designed Python-based Oracle and PostgreSQL migration scripts,
+                maintaining zero data-loss integrity across large-scale datasets and reducing migration effort by ~40%.
+              </li>
+              <li><strong>Agile Collaboration:</strong> Contributed to Agile/Scrum ceremonies, technical documentation,
+                and collaborative code reviews delivering backend solutions aligned with cross-functional requirements.
+              </li>
+            </ul>
+            <div class="timeline-tags">
+              <span>Django</span><span>Oracle</span><span>PostgreSQL</span><span>Scrum</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PROJECTS ═══ -->
+  <section id="projects" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">My Work</span>
+        <h2 class="section-title">Technical Projects</h2>
+        <p class="section-sub">Real-world solutions with measurable impact</p>
+      </div>
+
+      <div class="projects-grid">
+
+        <div class="project-card glass" id="project-soap">
+          <div class="project-glow"></div>
+          <div class="project-header">
+            <div class="project-icon" style="--pclr: #6366f1">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="project-badges">
+              <span class="p-badge">Python</span>
+              <span class="p-badge">Golang</span>
+              <span class="p-badge">GitLab CI/CD</span>
+            </div>
+          </div>
+          <h3 class="project-title">SOAP-to-REST Migration</h3>
+          <p class="project-desc">Refactored a legacy enterprise SOAP architecture into a Python/Golang REST API with
+            automated deployment via GitLab CI/CD pipelines — achieving 5x scalability and significantly reducing
+            long-term maintenance overhead.</p>
+          <div class="project-metrics">
+            <div class="metric">
+              <span class="metric-value">5x</span>
+              <span class="metric-label">Scalability</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value">↓</span>
+              <span class="metric-label">Maintenance</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value">Auto</span>
+              <span class="metric-label">Deployment</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card glass" id="project-rbac">
+          <div class="project-glow" style="--gclr: #06b6d4"></div>
+          <div class="project-header">
+            <div class="project-icon" style="--pclr: #06b6d4">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path
+                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="project-badges">
+              <span class="p-badge">Node.js</span>
+              <span class="p-badge">Python</span>
+              <span class="p-badge">JWT</span>
+            </div>
+          </div>
+          <h3 class="project-title">Employee RBAC Permission System</h3>
+          <p class="project-desc">Engineered a Role-Based Access Control system with JWT authentication and automated
+            permission workflows — cutting manual access provisioning by 70% and securing sensitive data across the
+            organization.</p>
+          <div class="project-metrics">
+            <div class="metric">
+              <span class="metric-value">70%</span>
+              <span class="metric-label">Less Manual Work</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value">JWT</span>
+              <span class="metric-label">Auth</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value">Secure</span>
+              <span class="metric-label">Data Access</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ EDUCATION ═══ -->
+  <section id="education" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Academic & Certifications</span>
+        <h2 class="section-title">Education</h2>
+        <p class="section-sub">Building a strong foundation for lifelong learning</p>
+      </div>
+      <div class="edu-grid">
+
+        <div class="edu-card glass" id="edu-bca">
+          <div class="edu-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 14l9-5-9-5-9 5 9 5z" />
+              <path
+                d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+            </svg>
+          </div>
+          <div class="edu-content">
+            <div class="edu-year">2019 – 2022</div>
+            <h3>Bachelor of Computer Applications (BCA)</h3>
+            <p class="edu-institution">Pavendra Bharathidasan College of Arts & Science</p>
+            <div class="edu-score">
+              <span class="score-label">Aggregate</span>
+              <div class="score-bar-track">
+                <div class="score-bar-fill" style="width: 80%"></div>
+              </div>
+              <span class="score-value">80%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-card glass" id="edu-cert">
+          <div class="edu-icon cert-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+            </svg>
+          </div>
+          <div class="edu-content">
+            <div class="edu-year">2023</div>
+            <h3>Full Stack Python Certification</h3>
+            <p class="edu-institution">Indra Institute of Education, Coimbatore</p>
+            <div class="cert-badge-wrap">
+              <span class="cert-badge">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
+                  <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+                Certified Professional
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Currently learning -->
+      <div class="learning-card glass">
+        <div class="learning-header">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="learning-icon">
+            <path
+              d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+          </svg>
+          <h3>Currently Self-Learning</h3>
+        </div>
+        <div class="learning-items">
+          <div class="learning-item">
+            <div class="learning-dot" style="--lclr: #f59e0b"></div>
+            <div>
+              <strong>AWS Cloud Services</strong>
+              <span>S3, SNS, SQS — aligning with cloud-native automation roles</span>
+            </div>
+          </div>
+          <div class="learning-item">
+            <div class="learning-dot" style="--lclr: #10b981"></div>
+            <div>
+              <strong>pytest Framework</strong>
+              <span>Advanced testing patterns for Python automation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACT ═══ -->
+  <section id="contact" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Let's Connect</span>
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-sub">Open to new opportunities and collaborations</p>
+      </div>
+      <div class="contact-grid">
+
+        <div class="contact-info glass">
+          <h3>Contact Details</h3>
+          <div class="contact-items">
+            <a href="mailto:rajahariharan2244@gmail.com" class="contact-item" id="contact-email">
+              <div class="contact-item-icon" style="--cclr: #6366f1">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                </svg>
+              </div>
+              <div>
+                <span class="contact-item-label">Email</span>
+                <span class="contact-item-value">rajahariharan2244@gmail.com</span>
+              </div>
+            </a>
+            <a href="tel:+916383852354" class="contact-item" id="contact-phone">
+              <div class="contact-item-icon" style="--cclr: #06b6d4">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                </svg>
+              </div>
+              <div>
+                <span class="contact-item-label">Phone</span>
+                <span class="contact-item-value">+91 63838 52354</span>
+              </div>
+            </a>
+            <a href="https://rajahariharan-portfolio.netlify.app" target="_blank" class="contact-item" id="contact-web">
+              <div class="contact-item-icon" style="--cclr: #10b981">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                </svg>
+              </div>
+              <div>
+                <span class="contact-item-label">Portfolio</span>
+                <span class="contact-item-value">rajahariharan-portfolio.netlify.app</span>
+              </div>
+            </a>
+            <div class="contact-item" id="contact-location">
+              <div class="contact-item-icon" style="--cclr: #f59e0b">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                </svg>
+              </div>
+              <div>
+                <span class="contact-item-label">Location</span>
+                <span class="contact-item-value">Trichy, Tamil Nadu, India</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap glass">
+          <h3>Send a Message</h3>
+          <form class="contact-form" id="contact-form">
+            <div class="form-group">
+              <label for="fname">Full Name</label>
+              <input type="text" id="fname" placeholder="Your full name" required />
+            </div>
+            <div class="form-group">
+              <label for="femail">Email Address</label>
+              <input type="email" id="femail" placeholder="your@email.com" required />
+            </div>
+            <div class="form-group">
+              <label for="fsubject">Subject</label>
+              <input type="text" id="fsubject" placeholder="What's this about?" />
+            </div>
+            <div class="form-group">
+              <label for="fmessage">Message</label>
+              <textarea id="fmessage" rows="5" placeholder="Tell me about the opportunity..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full" id="contact-submit-btn">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+              </svg>
+              Send Message
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="footer-name">Rajahariharan K</p>
+      <p class="footer-copy">© 2026 · Built with passion for clean code & great UX</p>
+      <div class="footer-links">
+        <a href="mailto:rajahariharan2244@gmail.com">Email</a>
+        <a href="tel:+916383852354">Phone</a>
+        <a href="https://rajahariharan-portfolio.netlify.app" target="_blank">Portfolio</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
